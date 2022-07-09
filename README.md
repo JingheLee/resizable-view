@@ -160,5 +160,9 @@ body {
 | size | `ResizableItem`的宽度/高度，`String`类型，默认值`50%` |
 | min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`5px` |
 
-## 在线演示
-[演示地址](./demo/index.html)
+## 演示项目
+[下载地址](./demo/demo.zip)  
+  
+    
+      
+      

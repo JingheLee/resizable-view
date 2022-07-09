@@ -11,7 +11,7 @@
           </resizable-view>
         </resizable-item>
         <resizable-item style="background-color:chocolate;" size="30%"></resizable-item>
-        <resizable-item style="background-color:coral;" size="20%" sliderbar-size="0px"></resizable-item>
+        <resizable-item style="background-color:coral;" size="20%" sliderbar-size="0px" min-size="50px"></resizable-item>
       </resizable-view>
       </resizable-item>
     </resizable-view>

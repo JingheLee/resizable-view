@@ -11,7 +11,6 @@ export default {
     name: "ResizableView",
     props: {
         direction: { type: String, default: 'horizontal' },
-        maxSize: { type: String, default: '100%' },
         overflow: { type: String, default: 'hidden' }
     },
     data() {
@@ -53,55 +52,42 @@ export default {
                  * 根据方向计算尺寸
                  */
                 if (this.direction === 'vertical') {
+                    let distance = e.clientY - this.targetY
+                    // 设置目标盒子高
+                    this.target.style.height = `${this.targetHeight + distance}px`
+
+                    // 计算排在当前盒子后面的所有盒子高度
+                    let tailBoxSize = 0
+                    for (let i = currentIndex + 1; i < children.length; i++)
+                        tailBoxSize += children[i].clientHeight
                     // 计算排在当前盒子前面的所有盒子高度
                     let headBoxSize = 0
                     for (let i = 0; i < currentIndex; i++)
                         headBoxSize += children[i].clientHeight
-                    // 计算排在当前盒子后面的所有盒子高度
-                    let tailBoxMinHeight = 0
-                    let tailBoxSize = 0
-                    for (let i = currentIndex + 1; i < children.length; i++){
-                        tailBoxSize += children[i].clientHeight
-                        tailBoxMinHeight += parseFloat(children[i].style.minHeight)
-                    }
-                    // 设置目标盒子高
-                    let distance = e.clientY - this.targetY
-                    let targetHeight = this.targetHeight + distance
-                    if(this.$refs.resizableView.clientHeight-tailBoxMinHeight-headBoxSize<=targetHeight)
-                        return
-                    this.target.style.height = `${targetHeight}px`
 
-                    let surplus = this.$refs.resizableView.clientHeight - this.target.clientHeight - headBoxSize - tailBoxMinHeight
-                    for (let i = currentIndex + 1; i < children.length; i++){
-                        let tailBoxHeight = surplus * (children[i].clientHeight-parseFloat(children[i].style.minHeight)) / (tailBoxSize-tailBoxMinHeight)
-                        tailBoxHeight += parseFloat(children[i].style.minHeight)
-                        children[i].style.height = `${tailBoxHeight}px`
-                    }
+
+                    let surplus = this.$refs.resizableView.clientHeight - this.target.clientHeight - headBoxSize
+                    for (let i = currentIndex + 1; i < children.length; i++)
+                        children[i].style.height = `${surplus * children[i].clientHeight / tailBoxSize}px`
                 } else {
+
+                    let distance = e.clientX - this.targetX
+                    // 设置目标盒子宽度
+                    this.target.style.width = `${this.targetWidth + distance}px`
+
+                    // 计算排在当前盒子后面的所有盒子宽度
+                    let tailBoxSize = 0
+                    for (let i = currentIndex + 1; i < children.length; i++)
+                        tailBoxSize += children[i].clientWidth
                     // 计算排在当前盒子前面的所有盒子宽度
                     let headBoxSize = 0
                     for (let i = 0; i < currentIndex; i++)
                         headBoxSize += children[i].clientWidth
-                    // 计算排在当前盒子后面的所有盒子宽度
-                    let tailBoxSize = 0
-                    let tailBoxMinWidth = 0
-                    for (let i = currentIndex + 1; i < children.length; i++){
-                        tailBoxSize += children[i].clientWidth
-                        tailBoxMinWidth += parseFloat(children[i].style.minWidth)
-                    }
-                    // 设置目标盒子宽度
-                    let distance = e.clientX - this.targetX
-                    let targetWidth = this.targetWidth + distance
 
-                    if(this.$refs.resizableView.clientWidth-headBoxSize-tailBoxMinWidth<=targetWidth)
-                        return
-                    this.target.style.width = `${targetWidth}px`
-                    let surplus = this.$refs.resizableView.clientWidth - this.target.clientWidth - headBoxSize-tailBoxMinWidth
-                    for (let i = currentIndex + 1; i < children.length; i++){
-                        let tailBoxWidth = surplus * (children[i].clientWidth-parseFloat(children[i].style.minWidth)) / (tailBoxSize-tailBoxMinWidth)
-                        tailBoxWidth += parseFloat(children[i].style.minWidth)
-                        children[i].style.width = `${tailBoxWidth}px`
-                    }
+
+                    let surplus = this.$refs.resizableView.clientWidth - this.target.clientWidth - headBoxSize
+                    for (let i = currentIndex + 1; i < children.length; i++)
+                        children[i].style.width = `${surplus * children[i].clientWidth / tailBoxSize}px`
                 }
 
             }
@@ -119,11 +105,8 @@ export default {
             let style = { overflow: this.overflow }
             if (this.$props.direction === 'vertical') {
                 style.flexDirection = 'column'
-                style.maxHeight = this.$props.maxSize
             } else {
                 style.flexDirection = 'row'
-                style.maxWidth = this.$props.maxSize
-
             }
             return style
         }

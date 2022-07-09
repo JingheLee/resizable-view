@@ -158,7 +158,7 @@ body {
 | sliderbar-hover-color | 鼠标经过滑动条时的背景颜色，`String`类型，默认值`#999` |
 | sliderbar-size | 滑动条宽度/高度，`String`类型，默认值`5px`<br/>建议最后一个`ResizableItem` 设置为`0px` |
 | size | `ResizableItem`的宽度/高度，`String`类型，默认值`50%` |
-| min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`5px` |
+| min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`0px` |
 
 ## 演示项目
 [下载地址](https://gitee.com/now-sleep/resizable-view/raw/master/demo/demo.zip)  

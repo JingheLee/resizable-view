@@ -32,7 +32,7 @@ export default {
         },
         minSize:{
             type:String,
-            default:'5px'
+            default:'0px'
         }
     },
     data(){

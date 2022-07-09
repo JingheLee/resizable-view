@@ -56,8 +56,8 @@ body {
 </style>
 
 ```
-实现效果  
-<iframe src="./video/1.mp4">
+示例效果  
+![](./gif/1.gif)
 
 ## 属性说明
 * ### ResizableView 组件

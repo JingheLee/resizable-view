@@ -1,10 +1,11 @@
 {
   "name": "resizable-view",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "library":"vue-cli-service build --target lib --name resizable-view ./src/install.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -39,5 +40,7 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "main": "./dist/resizable-view.common.js",
+  "files": ["dist/*"]
 }

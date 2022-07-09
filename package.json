@@ -1,7 +1,15 @@
 {
   "name": "resizable-view",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
+  "author": {
+    "name": "NowSleep",
+    "email": "18316980772@163.com"
+  },
+  "license": "Apache 2.0",
+  "repository":"https://gitee.com/now-sleep/resizable-view.git",
+  "bugs":"https://gitee.com/now-sleep/resizable-view/issues",
+  "keywords":["Vue","ResizableView"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

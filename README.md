@@ -1,8 +1,10 @@
-# ResizableView 组件
+# ResizableView 
 
 ## 功能说明  
-借助组件可以实现拖动滑动条改变布局大小，目前实现了横向、纵向效果，可嵌套使用，效果接近完美。
+借助组件可以实现拖动滑动条改变布局大小，目前实现了横向、纵向效果，支持嵌套使用。
 
+演示效果：  
+![](./demo/gif/3.gif)
 
 ## 安装与使用
 * ### 安装
@@ -24,7 +26,7 @@ app.use(ResizableView)
 app.mount('#app')
 
 ```
-* ### 快速入门
+* ### 横向布局
 ``` Vue
 <template>
   <div id="parent-view">
@@ -56,8 +58,90 @@ body {
 </style>
 
 ```
-示例效果  
-![](./gif/1.gif)
+示例效果:
+![](./demo/gif/1.gif)  
+
+* ### 纵向布局  
+这里用到了`ResizableView`组件的`direction`属性来控制布局方向，另外使用了`ResizableItem`组件的`min-size`属性来限制第一个盒子的最小高度
+``` vue
+<template>
+  <div id="parent-view">
+    <resizable-view direction="vertical">
+      <resizable-item style="background-color:bisque;" size="30%" min-size="100px"></resizable-item>
+      <resizable-item style="background-color:blanchedalmond;" size="70%" sliderbar-size="0px">
+      </resizable-item>
+    </resizable-view>
+  </div>
+</template>
+
+<script>
+
+
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#parent-view {
+  width: 100%;
+  height: 100vh;
+}
+</style>
+
+```  
+示例效果： 
+![](./demo/gif/2.gif)
+
+* ### 嵌套使用
+``` Vue
+<template>
+  <div id="parent-view">
+    <resizable-view>
+      <resizable-item style="background-color:bisque;" size="30%"></resizable-item>
+      <resizable-item style="background-color:blanchedalmond;" size="70%" sliderbar-size="0px">
+        <resizable-view direction="vertical">
+        <resizable-item style="background-color:burlywood;" size="50%">
+          <resizable-view>
+            <resizable-item style="background-color:blueviolet;" min-size="200px"></resizable-item>
+            <resizable-item style="background-color:cornflowerblue" sliderbar-size="0px"></resizable-item>
+          </resizable-view>
+        </resizable-item>
+        <resizable-item style="background-color:chocolate;" size="30%"></resizable-item>
+        <resizable-item style="background-color:coral;" size="20%" sliderbar-size="0px"></resizable-item>
+      </resizable-view>
+      </resizable-item>
+    </resizable-view>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#parent-view {
+  width: 100%;
+  height: 100vh;
+}
+</style>
+
+```  
+示例效果：
+![](./demo/gif/3.gif)
 
 ## 属性说明
 * ### ResizableView 组件
@@ -75,3 +159,6 @@ body {
 | sliderbar-size | 滑动条宽度/高度，`String`类型，默认值`5px`<br/>建议最后一个`ResizableItem` 设置为`0px` |
 | size | `ResizableItem`的宽度/高度，`String`类型，默认值`50%` |
 | min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`5px` |
+
+## 在线演示
+[演示地址](./demo/index.html)

@@ -4,7 +4,7 @@
 借助组件可以实现拖动滑动条改变布局大小，目前实现了横向、纵向效果，支持嵌套使用。
 
 演示效果：  
-![](https://gitee.com/now-sleep/resizable-view/raw/master/demo/gif/3.gif)
+![](./demo/gif/3.gif)
 
 ## 安装与使用
 * ### 安装
@@ -59,7 +59,7 @@ body {
 
 ```
 示例效果:
-![](https://gitee.com/now-sleep/resizable-view/raw/master/demo/gif/1.gif)  
+![](./demo/gif/1.gif)  
 
 * ### 纵向布局  
 这里用到了`ResizableView`组件的`direction`属性来控制布局方向，另外使用了`ResizableItem`组件的`min-size`属性来限制第一个盒子的最小高度
@@ -96,7 +96,7 @@ body {
 
 ```  
 示例效果： 
-![](https://gitee.com/now-sleep/resizable-view/raw/master/demo/gif/2.gif)
+![](./demo/gif/2.gif)
 
 * ### 嵌套使用
 ``` Vue
@@ -141,7 +141,7 @@ body {
 
 ```  
 示例效果：
-![](https://gitee.com/now-sleep/resizable-view/raw/master/demo/gif/3.gif)
+![](./demo/gif/3.gif)
 
 ## 属性说明
 * ### ResizableView 组件
@@ -161,7 +161,7 @@ body {
 | min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`0px` |
 
 ## 演示项目
-[下载地址](https://gitee.com/now-sleep/resizable-view/raw/master/demo/demo.zip)  
+[下载地址](./demo/demo.zip)  
   
     
       

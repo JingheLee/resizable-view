@@ -1,14 +1,14 @@
 {
   "name": "resizable-view",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "author": {
     "name": "jinghe_lee",
     "email": "jinghe_lee@163.com"
   },
   "license": "Apache 2.0",
-  "repository":"https://gitee.com/now-sleep/resizable-view.git",
-  "bugs":"https://gitee.com/now-sleep/resizable-view/issues",
+  "repository":"https://github.com/JingheLee/resizable-view.git",
+  "bugs":"https://github.com/JingheLee/resizable-view/issues",
   "keywords":["Vue","ResizableView"],
   "scripts": {
     "serve": "vue-cli-service serve",

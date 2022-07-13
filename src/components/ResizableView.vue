@@ -103,7 +103,6 @@ export default {
                         children[i].style.width = `${tailBoxWidth}px`
                     }
                 }
-
             }
 
         },

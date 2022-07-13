@@ -151,14 +151,21 @@ body {
 | direction | 控制组件分布方向<br/>* 数据类型：`String`<br/>* 可选值：`horizontal`、`vertical` <br/>* 默认值： `horizontal`|
 | overflow | 控制空间内容溢出处理方式，和`css`里面的`overflow`属性取值一致，默认值`hidden`|
 * ### ResizableItem 组件
+  * 属性  
 
-| 属性 | 描述 |  
-| ---- | ---- |
-| sliderbar-color | 滑动条的背景颜色，`String`类型，默认值`#ccc` |
-| sliderbar-hover-color | 鼠标经过滑动条时的背景颜色，`String`类型，默认值`#999` |
-| sliderbar-size | 滑动条宽度/高度，`String`类型，默认值`5px`<br/>建议最后一个`ResizableItem` 设置为`0px` |
-| size | `ResizableItem`的宽度/高度，`String`类型，默认值`50%` |
-| min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`0px` |
+    | 属性 | 描述 |  
+    | ---- | ---- |
+    | sliderbar-color | 滑动条的背景颜色，`String`类型，默认值`#ccc` |
+    | sliderbar-hover-color | 鼠标经过滑动条时的背景颜色，`String`类型，默认值`#999` |
+    | sliderbar-size | 滑动条宽度/高度，`String`类型，默认值`5px`<br/>建议最后一个`ResizableItem` 设置为`0px` |
+    | size | `ResizableItem`的宽度/高度，`String`类型，默认值`50%` |
+    | min-size | `ResizableItem`的最小宽度/最小高度，`String`类型，默认值`0px` |   
+
+  * 事件  
+
+    | 事件 | 描述 |
+    | ---- | ---- |
+    | onItemResize(width,height) | 在 `ResizableItem` 调整大小的时触发,传入组件最新的宽、高值 |
 
 ## 演示项目
 [下载地址](https://github.com/JingheLee/resizable-view/tree/master/demo/demo.zip)  

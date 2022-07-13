@@ -1,7 +1,7 @@
 <template>
   <div id="parent-view">
     <resizable-view>
-      <resizable-item style="background-color:bisque;" size="30%"></resizable-item>
+      <resizable-item style="background-color:bisque;" size="30%" v-on:on-item-resize="onItemResize"></resizable-item>
       <resizable-item style="background-color:blanchedalmond;" size="70%" sliderbar-size="0px">
         <resizable-view direction="vertical">
         <resizable-item style="background-color:burlywood;" size="50%">
@@ -27,6 +27,11 @@ export default {
   components: {
     ResizableView,
     ResizableItem
+  },
+  methods:{
+    onItemResize(w,h){
+      console.log(w,h)
+    }
   }
 }
 </script>

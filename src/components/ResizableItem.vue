@@ -35,6 +35,7 @@ export default {
             default:'0px'
         }
     },
+    emits:['onItemResize'],
     data(){
         return {
             direction: 'horizontal'
@@ -84,6 +85,7 @@ export default {
         },
         onMouseOut(){
             this.$refs.slideBar.style.backgroundColor = this.$props.sliderbarColor
+            this.$emit('onItemResize',this.$refs.item.clientWidth,this.$refs.item.clientHeight)
         }
     }
 }

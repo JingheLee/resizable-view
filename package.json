@@ -1,6 +1,6 @@
 {
   "name": "resizable-view",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "private": false,
   "author": {
     "name": "jinghe_lee",
@@ -14,6 +14,8 @@
     "Vue2",
     "ResizableView"
   ],
+  "main": "./dist/resizable-view.common.js",
+  "files": ["dist/*"],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

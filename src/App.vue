@@ -1,20 +1,11 @@
 <template>
   <div id="parent-view">
-    <resizable-view>
-      <resizable-item style="background-color:bisque;" size="30%" v-on:on-item-resize="onItemResize"></resizable-item>
-      <resizable-item style="background-color:blanchedalmond;" size="70%" sliderbar-size="0px">
-        <resizable-view direction="vertical">
-        <resizable-item style="background-color:burlywood;" size="50%">
-          <resizable-view>
-            <resizable-item style="background-color:blueviolet;" min-size="200px"></resizable-item>
-            <resizable-item style="background-color:cornflowerblue" sliderbar-size="0px"></resizable-item>
-          </resizable-view>
-        </resizable-item>
-        <resizable-item style="background-color:chocolate;" size="30%"></resizable-item>
-        <resizable-item style="background-color:coral;" size="20%" sliderbar-size="0px" min-size="50px"></resizable-item>
-      </resizable-view>
-      </resizable-item>
-    </resizable-view>
+  <resizable-view>
+    <resizable-item ref="left" @on-item-resize="onItemResize">
+      <div v-html="view" ref="root"></div>
+    </resizable-item>
+    <resizable-item></resizable-item>
+  </resizable-view>
   </div>
 </template>
 
@@ -28,9 +19,18 @@ export default {
     ResizableView,
     ResizableItem
   },
+  data(){
+    return {
+      'view':`<div class="class-1">
+                <div id="id-1" width="100" height="200" style="100px;height:200px;"></div>
+              </div>
+              <div class="class-1"></div>`
+    }
+  },
   methods:{
     onItemResize(w,h){
       console.log(w,h)
+      console.log(this.$refs.root.children)
     }
   }
 }

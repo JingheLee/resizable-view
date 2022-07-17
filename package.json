@@ -1,24 +1,28 @@
 {
   "name": "resizable-view",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "author": {
     "name": "jinghe_lee",
     "email": "jinghe_lee@163.com"
   },
   "license": "Apache 2.0",
-  "repository":"https://github.com/JingheLee/resizable-view.git",
-  "bugs":"https://github.com/JingheLee/resizable-view/issues",
-  "keywords":["Vue","ResizableView"],
+  "repository": "https://github.com/JingheLee/resizable-view.git",
+  "bugs": "https://github.com/JingheLee/resizable-view/issues",
+  "keywords": [
+    "Javascript",
+    "Vue2",
+    "ResizableView"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "library":"vue-cli-service build --target lib --name resizable-view ./src/install.js",
+    "library": "vue-cli-service build --target lib --name resizable-view ./src/install.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^2.6.14"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -27,7 +31,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
@@ -35,7 +40,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/essential",
       "eslint:recommended"
     ],
     "parserOptions": {
@@ -46,9 +51,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ],
-  "main": "./dist/resizable-view.common.js",
-  "files": ["dist/*"]
+    "not dead"
+  ]
 }

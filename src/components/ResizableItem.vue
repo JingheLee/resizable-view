@@ -85,7 +85,7 @@ export default {
         },
         onMouseOut(){
             this.$refs.slideBar.style.backgroundColor = this.$props.sliderbarColor
-            this.$emit('onItemResize',this.$refs.item.clientWidth,this.$refs.item.clientHeight)
+            this.$emit('item-resize',this.$refs.item.clientWidth,this.$refs.item.clientHeight)
         }
     }
 }

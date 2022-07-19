@@ -1,7 +1,7 @@
 <template>
   <div id="parent-view">
   <resizable-view>
-    <resizable-item ref="left" @on-item-resize="onItemResize">
+    <resizable-item ref="left" @item-resize="onItemResize">
       <div v-html="view" ref="root"></div>
     </resizable-item>
     <resizable-item></resizable-item>

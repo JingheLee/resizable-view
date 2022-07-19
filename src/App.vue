@@ -28,9 +28,9 @@ export default {
     }
   },
   methods:{
-    onItemResize(w,h){
-      console.log(w,h)
-      console.log(this.$refs.root.children)
+    onItemResize(width,height,item){
+      console.log(width,height,item)
+      console.log(this.$refs.left.getSize())
     }
   }
 }
